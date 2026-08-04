@@ -1,9 +1,9 @@
 <script setup>
-  import MountainList from '@/components/MountainList.vue'
+  import FavoriteList from '@/components/FavoriteList.vue'
 </script>
 
 <template>
   <v-container>
-    <MountainList/>
+    <FavoriteList/>
   </v-container>
 </template>

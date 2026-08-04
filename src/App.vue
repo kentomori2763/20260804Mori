@@ -1,48 +1,24 @@
 <script setup>
-import { onMounted } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-import { useUserStore } from './stores/user' //userのstoreをインポート
+import { usePrefectureStore } from './stores/prefecture'
 
-const userStore = useUserStore()
-
-// アプリ起動と同時にユーザー取得するActionsを実行
-onMounted(() => {
-  userStore.fetchUser()
-})
 </script>
 
 <template>
   <header>
-    <!-- Vueロゴの代わりにStoreから取得したユーザー写真 -->
     <img
-      v-if="userStore.photo"
-      :src="userStore.photo"
-      alt="User photo"
-      class="logo"
-      width="125"
-      height="125"
-    />
-    <img
-      v-else
       alt="Vue logo"
       class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
+      src="@/assets/icon.png"
+      width="200"
+      height="200"
     />
-
-    <div class="wrapper">
-      <!-- You did it! の代わりにStoreから取得したユーザー名 -->
-      <HelloWorld :msg="userStore.name || 'Loading...'" />
-
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/purchase">購入</RouterLink>
+        <RouterLink to="/">百名山一覧</RouterLink>
+        <RouterLink to="/favorite">挑戦山岳リスト</RouterLink>
       </nav>
-    </div>
+  
   </header>
-
   <RouterView />
 </template>
 
@@ -55,7 +31,6 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
-  border-radius: 50%; /* 丸くしてプロフィール画像っぽく */
 }
 
 nav {
@@ -95,11 +70,13 @@ nav a:first-of-type {
     flex-wrap: wrap;
   }
   nav {
-    text-align: left;
+    text-align: center;
     margin-left: -1rem;
     font-size: 1rem;
     padding: 1rem 0;
     margin-top: 1rem;
   }
+
+
 }
 </style>

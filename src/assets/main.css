@@ -33,3 +33,13 @@ a,
     padding: 0 2rem;
   }
 }
+v-container{
+  text-align: center;
+  display: flex;
+}
+
+.top-label{
+  background:#758F93;
+  color:white;
+  font-weight:bold;
+}

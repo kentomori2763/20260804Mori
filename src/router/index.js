@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import PurchaseView from '../views/PurchaseView.vue' //購入画面を追加
+import FavoriteList from '../views/FavoriteView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,9 +11,9 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/purchase',
-      name: 'purchase',
-      component: PurchaseView, //購入画面を追加
+      path: '/favorite',
+      name: 'favorite',
+      component: FavoriteList, //購入画面を追加
     },
   ],
 })
