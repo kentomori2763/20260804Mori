@@ -43,3 +43,4 @@ npm run build
 npm run lint
 ```
 "# 20260721" 
+"# 20260804Mori" 
